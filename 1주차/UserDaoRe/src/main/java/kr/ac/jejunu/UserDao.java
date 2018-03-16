@@ -32,8 +32,8 @@ public class UserDao {
         //sql 작성하고
         PreparedStatement preparedStatement =
                 connection.prepareStatement("insert into userinfo(name, password) values (?, ?)");
-        preparedStatement.setInt(1, user.getName());
-        preparedStatement.setInt(2, user.getPassword());
+        preparedStatement.setString(1, user.getName());
+        preparedStatement.setString(2, user.getPassword());
 
         preparedStatement.executeUpdate();
 
@@ -42,13 +42,12 @@ public class UserDao {
         resultSet.next();
         Integer id = resultSet.getInt(1);
 
-        user.setPassword(resultSet.getString("password"));
         //자원을 해지하고
         resultSet.close();
         preparedStatement.close();
         connection.close();
         //결과를 리턴한다.
-        return null;
+        return id;
     }
 
     private Connection getConnection() throws ClassNotFoundException, SQLException {

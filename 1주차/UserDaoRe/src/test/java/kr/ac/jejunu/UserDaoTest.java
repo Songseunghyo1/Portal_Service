@@ -13,7 +13,7 @@ public class UserDaoTest {
     private UserDao userDao;
 
     @Before
-    public void setuop() {
+    public void setup() {
         userDao = new UserDao();
     }
 
@@ -27,7 +27,7 @@ public class UserDaoTest {
     }
 
     @Test
-    public void add() {
+    public void add() throws SQLException, ClassNotFoundException {
         User user = new User();
         user.setName("헐크");
         user.setPassword("1111");
