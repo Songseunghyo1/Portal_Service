@@ -54,7 +54,7 @@ public class UserDao {
         //mysql driver load
         Class.forName("com.mysql.jdbc.Driver");
         //Connection 맺고
-        return DriverManager.getConnection("jdbc:mysql://192.168.0.54/jeju?charactorEncoding=utf-8"
+        return DriverManager.getConnection("jdbc:mysql://192.168.0.54/jeju?characterEncoding=utf-8"
                 , "jeju", "jejupw");
     }
 }
