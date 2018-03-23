@@ -5,6 +5,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class HallaUserDao extends UserDao {
+    public HallaUserDao() {
+        super(connectionMaker);
+    }
+
     @Override
     public Connection getConnection() throws ClassNotFoundException, SQLException {
         //mysql driver load

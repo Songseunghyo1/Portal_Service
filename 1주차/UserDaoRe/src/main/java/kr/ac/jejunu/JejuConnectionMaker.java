@@ -4,11 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class JejuUserDao extends UserDao {
-    public JejuUserDao() {
-        super(connectionMaker);
-    }
-
+public class JejuConnectionMaker implements ConnectionMaker {
     @Override
     public Connection getConnection() throws ClassNotFoundException, SQLException {
         //mysql driver load
