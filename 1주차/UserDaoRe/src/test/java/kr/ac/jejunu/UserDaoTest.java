@@ -10,13 +10,13 @@ import java.sql.SQLException;
 
 public class UserDaoTest {
 
-    private JejuUserDao userDao;
-    private HallaUserDao hallaUserDao;
+    private UserDao userDao;
+    //private HallaUserDao hallaUserDao;
 
     @Before
     public void setup() {
-        userDao = new JejuUserDao();
-        hallaUserDao = new HallaUserDao();
+        userDao = new UserDao();
+        //hallaUserDao = new HallaUserDao();
     }
 
     @Test
@@ -41,7 +41,7 @@ public class UserDaoTest {
         assertThat(insertedUser.getPassword(), is(user.getPassword()));
     }
 
-    @Test
+    /*@Test
     public void hallaGet() throws SQLException, ClassNotFoundException {
         int id= 1;
         User user = hallaUserDao.get(id);
@@ -61,5 +61,5 @@ public class UserDaoTest {
         assertThat(insertedUser.getId(), is(id));
         assertThat(insertedUser.getName(), is(user.getName()));
         assertThat(insertedUser.getPassword(), is(user.getPassword()));
-    }
+    }*/
 }
