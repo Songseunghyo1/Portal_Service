@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.GenericApplicationContext;
 
 import java.sql.SQLException;
 
@@ -24,9 +25,9 @@ public class UserDaoTest {
 
     @Test
     public void get() throws SQLException, ClassNotFoundException {
-        int id= 1;
+        int id= 3;
         User user = userDao.get(id);
-        assertThat(user.getId(), is(1));
+        assertThat(user.getId(), is(3));
         assertThat(user.getName(), is("Song"));
         assertThat(user.getPassword(), is("1234"));
     }

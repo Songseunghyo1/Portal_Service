@@ -39,8 +39,8 @@
       <file leaf-file-name="UserDaoTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/kr/ac/jejunu/UserDaoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="36" column="31" lean-forward="false" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+            <state relative-caret-position="468">
+              <caret line="29" column="37" lean-forward="false" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,11 +58,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="daoFactory.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resource/daoFactory.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="72" lean-forward="true" selection-start-line="7" selection-start-column="72" selection-end-line="7" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="JejuConnectionMaker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/jejunu/JejuConnectionMaker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="37" lean-forward="false" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+            <state relative-caret-position="162">
+              <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,12 +115,12 @@
       <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/jejunu/UserDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="39" column="62" lean-forward="false" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
+            <state relative-caret-position="450">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
-                <marker date="1522999056731" expanded="true" signature="477:509" ph="select * fro... users" />
-                <marker date="1522999056731" expanded="true" signature="1318:1365" ph="INSERT INTO users... " />
-                <marker date="1522999056731" expanded="true" signature="1587:1610" ph="select last_... " />
+                <marker date="1523001663620" expanded="true" signature="603:635" ph="select * fro... users" />
+                <marker date="1523001663620" expanded="true" signature="2131:2178" ph="INSERT INTO users... " />
+                <marker date="1523001663620" expanded="true" signature="2416:2439" ph="select last_... " />
               </folding>
             </state>
           </provider>
@@ -415,6 +425,7 @@
         <option value="$PROJECT_DIR$/src/main/java/kr/ac/jejunu/JejuUserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/kr/ac/jejunu/JejuConnectionMaker.java" />
         <option value="$PROJECT_DIR$/src/main/java/kr/ac/jejunu/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/resource/daoFactory.xml" />
         <option value="$PROJECT_DIR$/src/test/java/kr/ac/jejunu/UserDaoTest.java" />
       </list>
     </option>
@@ -426,10 +437,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="67" />
-    <option name="y" value="25" />
+    <option name="x" value="466" />
+    <option name="y" value="27" />
     <option name="width" value="887" />
-    <option name="height" value="1053" />
+    <option name="height" value="789" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -492,6 +503,13 @@
               <item name="UserDaoRe" type="b2602c69:ProjectViewProjectNode" />
               <item name="UserDaoRe" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UserDaoRe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UserDaoRe" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
@@ -519,8 +537,8 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
@@ -535,7 +553,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserDaoTest.get">
+  <component name="RunManager" selected="JUnit.UserDaoTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -568,17 +586,22 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="kr.ac.jejunu" />
       <option name="MAIN_CLASS_NAME" value="kr.ac.jejunu.UserDaoTest" />
-      <option name="METHOD_NAME" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://%MODULE_WORKING_DIR%" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
-      <envs />
+      <envs>
+        <env name="DB.CLASSNAME" value="com.mysql.jdbc.Driver" />
+        <env name="DB.URL" value="jdbc:mysql://localhost/portalservice" />
+        <env name="DB.USERNAME" value="root" />
+        <env name="DM.PASSWORD" value="sslabflask" />
+      </envs>
       <patterns />
     </configuration>
     <configuration name="UserDaoTest.add" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -596,14 +619,19 @@
       <option name="METHOD_NAME" value="add" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://%MODULE_WORKING_DIR%" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
-      <envs />
+      <envs>
+        <env name="DB.CLASSNAME" value="com.mysql.jdbc.Driver" />
+        <env name="DB.URL" value="jdbc:mysql://localhost/portalservice" />
+        <env name="DB.USERNAME" value="root" />
+        <env name="DM.PASSWORD" value="sslabflask" />
+      </envs>
       <patterns />
     </configuration>
     <configuration name="UserDaoTest.get" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -621,14 +649,19 @@
       <option name="METHOD_NAME" value="get" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://%MODULE_WORKING_DIR%" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
-      <envs />
+      <envs>
+        <env name="DB.CLASSNAME" value="com.mysql.jdbc.Driver" />
+        <env name="DB.URL" value="jdbc:mysql://localhost/portalservice" />
+        <env name="DB.USERNAME" value="root" />
+        <env name="DM.PASSWORD" value="sslabflask" />
+      </envs>
       <patterns />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -698,9 +731,9 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.UserDaoTest.get" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.UserDaoTest.add" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.UserDaoTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.UserDaoTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.UserDaoTest.get" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.UserDaoTest.add" />
       </list>
     </recent_temporary>
   </component>
@@ -717,44 +750,44 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1522997426159</updated>
-      <workItem from="1522997427757" duration="2179000" />
+      <workItem from="1522997427757" duration="5336000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserDaoTest - 2018.04.06 at 16h 09m 05s.xml">
+    <history-entry file="UserDaoTest - 2018.04.06 at 17h 11m 58s.xml">
       <configuration name="UserDaoTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDaoTest - 2018.04.06 at 16h 14m 22s.xml">
+    <history-entry file="UserDaoTest - 2018.04.06 at 17h 18m 42s.xml">
       <configuration name="UserDaoTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDaoTest - 2018.04.06 at 16h 14m 25s.xml">
+    <history-entry file="UserDaoTest - 2018.04.06 at 17h 19m 20s.xml">
       <configuration name="UserDaoTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDaoTest - 2018.04.06 at 16h 16m 00s.xml">
-      <configuration name="UserDaoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserDaoTest_add - 2018.04.06 at 16h 09m 13s.xml">
+    <history-entry file="UserDaoTest_add - 2018.04.06 at 17h 10m 51s.xml">
       <configuration name="UserDaoTest.add" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDaoTest_add - 2018.04.06 at 16h 17m 06s.xml">
-      <configuration name="UserDaoTest.add" configurationId="JUnit" />
+    <history-entry file="UserDaoTest_get - 2018.04.06 at 17h 01m 55s.xml">
+      <configuration name="UserDaoTest.get" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDaoTest_add - 2018.04.06 at 16h 17m 50s.xml">
-      <configuration name="UserDaoTest.add" configurationId="JUnit" />
+    <history-entry file="UserDaoTest_get - 2018.04.06 at 17h 08m 40s.xml">
+      <configuration name="UserDaoTest.get" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDaoTest_add - 2018.04.06 at 16h 19m 14s.xml">
-      <configuration name="UserDaoTest.add" configurationId="JUnit" />
+    <history-entry file="UserDaoTest_get - 2018.04.06 at 17h 10m 14s.xml">
+      <configuration name="UserDaoTest.get" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDaoTest_add - 2018.04.06 at 16h 22m 44s.xml">
-      <configuration name="UserDaoTest.add" configurationId="JUnit" />
+    <history-entry file="UserDaoTest_get - 2018.04.06 at 17h 11m 34s.xml">
+      <configuration name="UserDaoTest.get" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDaoTest_get - 2018.04.06 at 16h 22m 58s.xml">
+    <history-entry file="UserDaoTest_get - 2018.04.06 at 17h 15m 57s.xml">
+      <configuration name="UserDaoTest.get" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest_get - 2018.04.06 at 17h 16m 22s.xml">
       <configuration name="UserDaoTest.get" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2179000" />
+    <option name="totallyTimeSpent" value="5336000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="7" />
@@ -777,12 +810,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24986508" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07771182" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13923368" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -827,34 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/jejunu/JejuConnectionMaker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="37" lean-forward="false" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/jejunu/ConnectionMaker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/jejunu/DaoFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/jejunu/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -871,22 +876,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/daoFactory.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="72" lean-forward="true" selection-start-line="7" selection-start-column="72" selection-end-line="7" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/jejunu/DaoFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/jejunu/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="39" column="62" lean-forward="false" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
+        <state relative-caret-position="450">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <marker date="1522999056731" expanded="true" signature="477:509" ph="select * fro... users" />
-            <marker date="1522999056731" expanded="true" signature="1318:1365" ph="INSERT INTO users... " />
-            <marker date="1522999056731" expanded="true" signature="1587:1610" ph="select last_... " />
+            <marker date="1523001663620" expanded="true" signature="603:635" ph="select * fro... users" />
+            <marker date="1523001663620" expanded="true" signature="2131:2178" ph="INSERT INTO users... " />
+            <marker date="1523001663620" expanded="true" signature="2416:2439" ph="select last_... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/jejunu/ConnectionMaker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kr/ac/jejunu/JejuConnectionMaker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/kr/ac/jejunu/UserDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="36" column="31" lean-forward="false" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+        <state relative-caret-position="468">
+          <caret line="29" column="37" lean-forward="false" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -945,11 +986,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>UserDaoRe</last-edited>
+          <last-edited>UserDaoRe_main|UserDaoRe</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
