@@ -1,33 +1,33 @@
 package kr.ac.jejunu;
 
+import javax.sql.DataSource;
 import java.sql.*;
 
 public class UserDao {
-    private final ConnectionMaker connectionMaker;
+    private final DataSource dataSource;
 
-    public UserDao(ConnectionMaker connectionMaker) {
-        this.connectionMaker = connectionMaker;
+    public UserDao(DataSource dataSource) {
+        this.dataSource = dataSource;
     }
 
     public User get(int id) throws ClassNotFoundException, SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
-        User user;
+        User user = null;
 
         try {
-            connection = connectionMaker.getConnection();
-            //sql 작성하고
-            preparedStatement = connection.prepareStatement("select * from users where id = ?");
+            connection = dataSource.getConnection();
+            preparedStatement = connection.prepareStatement("select * from userinfo where id = ?");
             preparedStatement.setInt(1, id);
-            //sql 실행하고
             resultSet = preparedStatement.executeQuery();
-            //결과를 User 에 매핑하고
-            resultSet.next();
-            user = new User();
-            user.setId(resultSet.getInt("id"));
-            user.setName(resultSet.getString("name"));
-            user.setPassword(resultSet.getString("password"));
+
+            if(resultSet.next()) {
+                user = new User();
+                user.setId(resultSet.getInt("id"));
+                user.setName(resultSet.getString("name"));
+                user.setPassword(resultSet.getString("password"));
+            }
         } finally {
             if (resultSet != null)
                 try {
@@ -60,7 +60,7 @@ public class UserDao {
 
         try {
             //mysql driver load
-            connection = connectionMaker.getConnection();
+            connection = dataSource.getConnection();
             //sql 작성하고
             preparedStatement =
                     connection.prepareStatement("INSERT INTO users(name, password) values (?, ?)");
@@ -99,6 +99,64 @@ public class UserDao {
     public Connection getConnection() throws ClassNotFoundException, SQLException {
         //mysql driver load
         //Connection 맺고
-        return connectionMaker.getConnection();
+        return dataSource.getConnection();
+    }
+
+    public void update(User user) throws SQLException, ClassNotFoundException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+            connection = dataSource.getConnection();
+            preparedStatement = connection.prepareStatement(
+            "update userinfo set name = ?, password = ? where id = ?");
+            preparedStatement.setString(1, user.getName());
+            preparedStatement.setString(2, user.getPassword());
+            preparedStatement.setInt(3, user.getId());
+            preparedStatement.executeUpdate();
+        }
+
+        finally {
+            if (preparedStatement != null)
+                try {
+                    preparedStatement.close();
+                }
+                catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+            if (connection != null)
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+        }
+    }
+
+    public void delete(Integer id) throws SQLException, ClassNotFoundException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+            connection = dataSource.getConnection();
+            preparedStatement = connection.prepareStatement(
+                    "delete from userinfo where id = ?");
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+        } finally {
+            if (preparedStatement != null)
+                try {
+                preparedStatement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            if (connection != null)
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
     }
 }
