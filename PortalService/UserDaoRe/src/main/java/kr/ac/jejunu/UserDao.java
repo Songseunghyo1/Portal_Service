@@ -14,7 +14,7 @@ public class UserDao {
 
         //sql 작성하고
         PreparedStatement preparedStatement =
-                connection.prepareStatement("select * from userinfo where id = ?");
+                connection.prepareStatement("select * from users where id = ?");
         preparedStatement.setInt(1, id);
         //sql 실행하고
         ResultSet resultSet = preparedStatement.executeQuery();
@@ -37,7 +37,7 @@ public class UserDao {
         Connection connection = connectionMaker.getConnection();
         //sql 작성하고
         PreparedStatement preparedStatement =
-                connection.prepareStatement("insert into userinfo(name, password) values (?, ?)");
+                connection.prepareStatement("INSERT INTO users(name, password) values (?, ?)");
         preparedStatement.setString(1, user.getName());
         preparedStatement.setString(2, user.getPassword());
 
