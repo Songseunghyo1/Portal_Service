@@ -11,7 +11,7 @@ import java.sql.Driver;
 @Configuration
 public class DaoFactory {
     @Value("${db.classname}")
-    private String classname;
+    private String className;
     @Value("${db.url}")
     private String url;
     @Value("${db.username}")
@@ -21,26 +21,25 @@ public class DaoFactory {
 
     @Bean
     public UserDao userDao() {
-        return new UserDao(dataSource());
+        return new UserDao(jdbcContext());
+    }
+
+    @Bean
+    public JdbcContext jdbcContext() {
+        return new JdbcContext(dataSource());
     }
 
     @Bean
     public DataSource dataSource() {
         SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
         try {
-            dataSource.setDriverClass((Class<? extends Driver>) Class.forName(classname));
+            dataSource.setDriverClass((Class<? extends Driver>) Class.forName(className));
         } catch (ClassNotFoundException e) {
-                new RuntimeException(e);
+            new RuntimeException(e);
         }
         dataSource.setUrl(url);
         dataSource.setUsername(username);
         dataSource.setPassword(password);
-
         return dataSource;
     }
-
-    /*@Bean
-    public ConnectionMaker getConnectionMaker() {
-        return new JejuConnectionMaker();
-    }*/
 }
