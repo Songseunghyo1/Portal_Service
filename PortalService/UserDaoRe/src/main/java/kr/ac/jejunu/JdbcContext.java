@@ -10,15 +10,15 @@ import java.sql.*;
 
 @AllArgsConstructor
 public class JdbcContext {
-    final DataSource dataSource;
+    private DataSource dataSource;
 
     User jdbcContextForGet(StatementStrategy statementStrategy) throws SQLException {
         User user = null;
-        @Cleanup
+
         Connection connection = dataSource.getConnection();
-        @Cleanup
+
         PreparedStatement preparedStatement = statementStrategy.makeStatement(connection);
-        @Cleanup
+
         ResultSet resultSet = preparedStatement.executeQuery();
         if (resultSet.next()) {
             user = new User();
