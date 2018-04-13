@@ -52,6 +52,7 @@ public class UserDao {
         return user;
     }
 
+    // 변하는 것
     public Integer insert(User user) throws ClassNotFoundException, SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -108,11 +109,9 @@ public class UserDao {
 
         try {
             connection = dataSource.getConnection();
-            preparedStatement = connection.prepareStatement(
-            "update userinfo set name = ?, password = ? where id = ?");
-            preparedStatement.setString(1, user.getName());
-            preparedStatement.setString(2, user.getPassword());
-            preparedStatement.setInt(3, user.getId());
+            StatementStrategy statementStrategy = new UpdateUSerStatementStrategy(user);
+            preparedStatement = statementStrategy.makeStatement(connection);
+
             preparedStatement.executeUpdate();
         }
 
@@ -134,15 +133,24 @@ public class UserDao {
         }
     }
 
+    private void makePrepareStatement(User user, Connection connection) throws SQLException {
+        PreparedStatement preparedStatement = connection.prepareStatement(
+        "update userinfo set name = ?, password = ? where id = ?");
+        preparedStatement.setString(1, user.getName());
+        preparedStatement.setString(2, user.getPassword());
+        preparedStatement.setInt(3, user.getId());
+    }
+
     public void delete(Integer id) throws SQLException, ClassNotFoundException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
 
         try {
             connection = dataSource.getConnection();
-            preparedStatement = connection.prepareStatement(
-                    "delete from userinfo where id = ?");
-            preparedStatement.setInt(1, id);
+            StatementStrategy statementStrategy = new DeleteUserStatementStrategy(id);
+            preparedStatement = statementStrategy.makeStatement(connection);
+
+
             preparedStatement.executeUpdate();
         } finally {
             if (preparedStatement != null)
