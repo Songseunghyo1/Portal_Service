@@ -12,13 +12,13 @@ import java.sql.Driver;
 @Configuration
 public class DaoFactory {
     @Value("${db.classname}")
-    private String className;
+    private String className = "com.mysql.jdbc.Driver";
     @Value("${db.url}")
-    private String url;
+    private String url = "jdbc:mysql://localhost/portalservice?characterEncoding=utf-8";
     @Value("${db.username}")
-    private String username;
+    private String username = "root";
     @Value("${db.password}")
-    private String password;
+    private String password = "sslabflask";
 
     @Bean
     public UserDao userDao() {
@@ -26,12 +26,7 @@ public class DaoFactory {
     }
 
     @Bean
-    private JdbcTemplate jdbcTemplate() {
-        return new JdbcTemplate(dataSource());
-    }
-
-    @Bean
-    public JdbcTemplate jdbcContext() {
+    public JdbcTemplate jdbcTemplate() {
         return new JdbcTemplate(dataSource());
     }
 
@@ -40,9 +35,9 @@ public class DaoFactory {
         SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
         try {
             dataSource.setDriverClass((Class<? extends Driver>) Class.forName(className));
-        } catch (ClassNotFoundException e) {
-            new RuntimeException(e);
-        }
+            } catch (ClassNotFoundException e) {
+                new RuntimeException(e);
+            }
         dataSource.setUrl(url);
         dataSource.setUsername(username);
         dataSource.setPassword(password);

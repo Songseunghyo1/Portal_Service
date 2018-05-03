@@ -2,23 +2,23 @@ package kr.ac.jejunu;
 
 import lombok.AllArgsConstructor;
 import lombok.Cleanup;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.sql.DataSource;
 import java.sql.*;
 
 @AllArgsConstructor
 public class JdbcContext {
-    private DataSource dataSource;
+    final DataSource dataSource;
+
 
     User jdbcContextForGet(StatementStrategy statementStrategy) throws SQLException {
+
         User user = null;
-
+        @Cleanup
         Connection connection = dataSource.getConnection();
-
+        @Cleanup
         PreparedStatement preparedStatement = statementStrategy.makeStatement(connection);
-
+        @Cleanup
         ResultSet resultSet = preparedStatement.executeQuery();
         if (resultSet.next()) {
             user = new User();
@@ -26,6 +26,7 @@ public class JdbcContext {
             user.setName(resultSet.getString("name"));
             user.setPassword(resultSet.getString("password"));
         }
+
         return user;
     }
 
@@ -34,15 +35,13 @@ public class JdbcContext {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Integer id;
+
         try {
             connection = dataSource.getConnection();
             preparedStatement = statementStrategy.makeStatement(connection);
-
             preparedStatement.executeUpdate();
-
             resultSet = preparedStatement.getGeneratedKeys();
             resultSet.next();
-
             id = resultSet.getInt(1);
         } finally {
             if (resultSet != null)
@@ -53,17 +52,16 @@ public class JdbcContext {
                 }
             if (preparedStatement != null)
                 try {
-                    preparedStatement.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+                preparedStatement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
             if (connection != null)
                 try {
                     connection.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-
         }
         return id;
     }
@@ -74,9 +72,7 @@ public class JdbcContext {
         try {
             connection = dataSource.getConnection();
             preparedStatement = statementStrategy.makeStatement(connection);
-
             preparedStatement.executeUpdate();
-
         } finally {
             if (preparedStatement != null)
                 try {
@@ -90,17 +86,18 @@ public class JdbcContext {
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-
         }
     }
 
     void update(String sql, Object[] params) throws SQLException {
         StatementStrategy statementStrategy = connection -> {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            for (int i = 0; i < params.length; i++) {
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+        for (int i = 0; i < params.length; i++) {
                 preparedStatement.setObject(i + 1, params[i]);
-            }
-            return preparedStatement;
+        }
+
+        return preparedStatement;
         };
         jdbcContextForUpdate(statementStrategy);
     }
@@ -111,8 +108,9 @@ public class JdbcContext {
             for (int i = 0; i < params.length; i++) {
                 preparedStatement.setObject(i + 1, params[i]);
             }
+
             return preparedStatement;
-        };
+            };
         return jdbcContextForInsert(statementStrategy);
     }
 
@@ -122,8 +120,9 @@ public class JdbcContext {
             for (int i = 0; i < params.length; i++) {
                 preparedStatement.setObject(i + 1, params[i]);
             }
+
             return preparedStatement;
-        };
+            };
         return jdbcContextForGet(statementStrategy);
     }
 }

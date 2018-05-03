@@ -5,9 +5,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 
+import javax.sql.DataSource;
 import java.sql.*;
 
-public class UserDao {
+public class UserDao  {
     private final JdbcTemplate jdbcTemplate;
 
     public UserDao(JdbcTemplate jdbcTemplate) {
@@ -26,7 +27,7 @@ public class UserDao {
                 return user;
             });
         } catch (EmptyResultDataAccessException e) {
-            return null;
+        return null;
         }
     }
 
@@ -35,11 +36,13 @@ public class UserDao {
         Object[] params = new Object[]{user.getName(), user.getPassword()};
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(con -> {
-            PreparedStatement preparedStatement = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            for (int i = 0; i < params.length; i++) {
+        PreparedStatement preparedStatement = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
+        for (int i = 0; i < params.length; i++) {
                 preparedStatement.setObject(i + 1, params[i]);
-            }
-            return preparedStatement;
+        }
+
+        return preparedStatement;
         }, keyHolder);
         return keyHolder.getKey().intValue();
     }

@@ -1,12 +1,8 @@
 package kr.ac.jejunu;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
-@Data   // lombok
-@Getter
-@Setter
+@Data
 public class User {
     private Integer id;
     private String name;

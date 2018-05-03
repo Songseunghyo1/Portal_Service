@@ -8,20 +8,18 @@ import java.sql.SQLException;
 
 public class JejuConnectionMaker implements ConnectionMaker {
     @Value("${db.classname}")
-    private String classname;
+    private String className = "com.mysql.jdbc.Driver";
     @Value("${db.url}")
-    private String url;
+    private String url = "jdbc:mysql://localhost/portalservice?characterEncoding=utf-8";
     @Value("${db.username}")
-    private String username;
+    private String username = "root";
     @Value("${db.password}")
-    private String password;
+    private String password = "sslabflask";
 
     @Override
     public Connection getConnection() throws ClassNotFoundException, SQLException {
-        //mysql driver load
-        Class.forName("com.mysql.jdbc.Driver");
-        //Connection 맺고
-        return DriverManager.getConnection("jdbc:mysql://localhost/portalservice"
-                , "root", "sslabflask");
+        Class.forName(className);
+        return DriverManager.getConnection(
+                url, username, password);
     }
 }
