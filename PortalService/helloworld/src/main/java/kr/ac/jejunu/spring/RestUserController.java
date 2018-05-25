@@ -4,7 +4,7 @@ import kr.ac.jejunu.hello.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @RequestMapping("/rest")
 public class RestUserController {
     @GetMapping("{id}")
@@ -16,5 +16,20 @@ public class RestUserController {
         user.setPassword("1111");
 
         return user;
+    }
+
+    @PostMapping
+    public User create(@RequestBody  User user) {
+        return user;
+    }
+
+    @PutMapping
+    public User update(@RequestBody User user) {
+        return user;
+    }
+
+    @DeleteMapping
+    public void delete(@PathVariable Integer id) {
+
     }
 }
