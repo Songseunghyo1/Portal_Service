@@ -8,18 +8,16 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/rest")
 public class RestUserController {
     @GetMapping("{id}")
-    @ResponseBody
     public User get(@PathVariable Integer id) {
         User user = new User();
         user.setId(id);
         user.setName("hulk");
         user.setPassword("1111");
-
         return user;
     }
 
     @PostMapping
-    public User create(@RequestBody  User user) {
+    public User create(@RequestBody User user) {
         return user;
     }
 
@@ -33,3 +31,22 @@ public class RestUserController {
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

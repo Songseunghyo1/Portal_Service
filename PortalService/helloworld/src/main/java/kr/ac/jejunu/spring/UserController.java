@@ -83,7 +83,7 @@ public class UserController {
 
     @PostMapping
     public void user(User user) {
-        log.info("********** void test user **********");
+        log.info("******** void test user ********");
     }
 
     @GetMapping("/string")
@@ -100,4 +100,22 @@ public class UserController {
     public String forwardStringTest() {
         return "forward:/user";
     }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
